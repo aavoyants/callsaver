@@ -1,6 +1,6 @@
 ## Setup
 
-
+```
 bundle exec thor app:setup
 ```
 
