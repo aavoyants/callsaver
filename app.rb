@@ -5,7 +5,7 @@ require 'yaml'
 env = ENV['RACK_ENV'] || 'development'
 
 db_config = YAML.load_file('config/database.yml')[env]
-CONNECTION = PG.connect(dbname: db_config['database'], user: db_config['user'])
+CONNECTION = PG.connect(dbname: db_config['database'], user: db_config['user'], password: db_config['password'])
 
 CONNECTION.exec('CREATE EXTENSION if not exists "uuid-ossp";')
 CONNECTION.exec('CREATE TABLE IF NOT exists requests(id uuid DEFAULT uuid_generate_v1(), json json);')
