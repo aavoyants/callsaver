@@ -6,5 +6,4 @@ gem 'pg'
 
 group :development, :test do
   gem 'thor'
-  gem 'pry'
 end
