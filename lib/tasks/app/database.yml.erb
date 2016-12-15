@@ -1,0 +1,16 @@
+---
+default: &default
+  adapter: postgres
+  encoding: utf8
+
+development:
+  <<: *default
+  database: <%= @db_name %>_development
+  user: <%= @db_user %>
+  password: <%= @db_pass %>
+
+test:
+  <<: *default
+  database: <%= @db_name %>_test
+  user: <%= @db_user %>
+  password: <%= @db_pass %>
